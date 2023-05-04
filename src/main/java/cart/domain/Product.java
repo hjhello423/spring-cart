@@ -14,22 +14,20 @@ public class Product {
     private String image;
     private Money price;
 
-    private Product(long id, String name, String image, Money price) {
+    private Product(Long id, String name, String image, Money price) {
+        validate(name, image, price);
         this.id = id;
         this.name = name;
         this.image = image;
         this.price = price;
     }
 
-    private Product(String name, String image, Money price) {
-        validate(name, image, price);
-        this.name = name;
-        this.image = image;
-        this.price = price;
-    }
-
     public static Product of(String name, String image, long price) {
-        return new Product(name, image, Money.of(price));
+        return Product.builder()
+                .name(name)
+                .image(image)
+                .price(Money.of(price))
+                .build();
     }
 
     private void validate(String name, String image, Money price) {
@@ -78,12 +76,7 @@ public class Product {
         return image;
     }
 
-    public long getPrice() {
-        BigDecimal priceValue = price.getValue();
-        return priceValue.longValue();
-    }
-
-    public BigDecimal priceValue() {
+    public BigDecimal price() {
         return price.getValue();
     }
 

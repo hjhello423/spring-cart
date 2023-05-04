@@ -34,13 +34,14 @@ public class HomeController {
 
     @GetMapping("/settings")
     public String settings(Model model) {
+        // TODO step2에서 진행
 
         return "settings";
     }
 
     @GetMapping("/cart")
     public String cart(Model model) {
-
+        // TODO step2에서 진행
 
         return "cart";
     }

@@ -28,4 +28,8 @@ public class Money {
         return value;
     }
 
+    public long getLongValue() {
+        return value.longValue();
+    }
+
 }

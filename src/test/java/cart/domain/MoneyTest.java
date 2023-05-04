@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class MoneyTest {
 
     @DisplayName("Money는 0이상의 값으로 생성 가능하다.")
-    @ParameterizedTest
+    @ParameterizedTest(name = "Money는 {0} 값으로 생성 가능하다.")
     @ValueSource(ints = {0, 1, 10, 50, 1000})
     void of(int value) {
         // given
@@ -28,8 +28,8 @@ class MoneyTest {
     }
 
     @DisplayName("Money는 0미만의 값으로 생성 불가능하다.")
-    @ParameterizedTest
-    @ValueSource(ints = {-1000, -50 - 10, -1})
+    @ParameterizedTest(name = "Money는 {0} 값으로 생성 불가능하다.")
+    @ValueSource(ints = {-1000, -50, -10, -1})
     void of_fail(int value) {
         // then
         assertThatThrownBy(() -> Money.of(value))

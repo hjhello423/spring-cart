@@ -9,4 +9,8 @@ public class ServiceException extends RuntimeException {
         this.errorType = errorType;
     }
 
+    public String errorCode() {
+        return errorType.name();
+    }
+
 }
