@@ -3,6 +3,7 @@ package cart.domain;
 import cart.exception.ServiceException;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import static cart.exception.ErrorType.INVALID_MONEY;
 
@@ -30,6 +31,19 @@ public class Money {
 
     public long getLongValue() {
         return value.longValue();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Money money = (Money) o;
+        return Objects.equals(value, money.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 
 }

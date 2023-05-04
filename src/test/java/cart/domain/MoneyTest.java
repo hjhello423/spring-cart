@@ -2,7 +2,9 @@ package cart.domain;
 
 import cart.exception.ErrorType;
 import cart.exception.ServiceException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -37,4 +39,18 @@ class MoneyTest {
                 .hasMessage(ErrorType.INVALID_MONEY.getMessage());
     }
 
+    @DisplayName("동등성 비교를 할 수 있다.")
+    @Test
+    void equals() {
+        // given
+        long value = 1000L;
+        Money money1 = Money.of(value);
+        Money money2 = Money.of(value);
+
+        // when
+        boolean equals = money1.equals(money2);
+
+        // then
+        assertThat(equals).isTrue();
+    }
 }

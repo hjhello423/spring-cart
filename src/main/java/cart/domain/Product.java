@@ -76,6 +76,10 @@ public class Product {
         return image;
     }
 
+    public Money getPrice() {
+        return price;
+    }
+
     public BigDecimal price() {
         return price.getValue();
     }
