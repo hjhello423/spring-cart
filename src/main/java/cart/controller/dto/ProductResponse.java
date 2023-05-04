@@ -11,6 +11,8 @@ public class ProductResponse {
     private String image;
     private BigDecimal price;
 
+    private ProductResponse() {
+    }
 
     public ProductResponse(long id, String name, String image, BigDecimal price) {
         this.id = id;

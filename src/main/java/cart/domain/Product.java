@@ -76,8 +76,8 @@ public class Product {
         return image;
     }
 
-    public Money getPrice() {
-        return price;
+    public long getPrice() {
+        return price.getLongValue();
     }
 
     public BigDecimal price() {

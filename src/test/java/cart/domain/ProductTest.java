@@ -64,10 +64,10 @@ class ProductTest {
                 .build();
         String name = "테스트 상품 수정";
         String image = "test2.png";
-        Money price = Money.of(2000L);
+        long price = 2000L;
 
         // when
-        product.update(name, image, price.getLongValue());
+        product.update(name, image, price);
 
         // then
         assertThat(product.getName()).isEqualTo(name);
