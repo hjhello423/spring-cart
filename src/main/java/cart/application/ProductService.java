@@ -1,12 +1,14 @@
 package cart.application;
 
+import cart.controller.dto.ProductRequest;
+import cart.controller.dto.ProductResponse;
 import cart.controller.dto.ProductsResponse;
 import cart.domain.Product;
 import cart.domain.ProductRepository;
 import cart.domain.Products;
+import cart.exception.ErrorType;
+import cart.exception.ServiceException;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ProductService {
@@ -18,12 +20,28 @@ public class ProductService {
     }
 
     public ProductsResponse getAllProducts() {
-//        Products products = productRepository.findAll();
-        Product product = Product.of(1L, "상품의 이름", "/images/tteokbokki.jpg", 1000);
-        List<Product> products1 = List.of(product);
-        Products products = new Products(products1);
+        Products products = productRepository.findAll();
 
         return ProductsResponse.of(products);
+    }
+
+    public ProductResponse createProduct(ProductRequest request) {
+        Product product = request.toProduct();
+        productRepository.save(product);
+
+        return ProductResponse.of(product);
+    }
+
+    public ProductResponse updateProduct(long id, ProductRequest request) {
+        Product product = findProduct(id);
+        product.update(request.getName(), request.getImage(), request.getPrice());
+        productRepository.update(product);
+        return ProductResponse.of(product);
+    }
+
+    private Product findProduct(long id) {
+        return productRepository.findById(id)
+                .orElseThrow(() -> new ServiceException(ErrorType.PRODUCT_NOT_FOUND));
     }
 
 }

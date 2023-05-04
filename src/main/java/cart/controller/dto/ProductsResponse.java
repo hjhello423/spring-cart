@@ -43,7 +43,7 @@ public class ProductsResponse {
         }
 
         public static ProductDto of(Product product) {
-            return new ProductDto(product.getId(), product.getName(), product.getImage(), product.price());
+            return new ProductDto(product.getId(), product.getName(), product.getImage(), product.priceValue());
         }
 
         public long getId() {

@@ -16,7 +16,7 @@ public class Money {
         this.value = value;
     }
 
-    public static Money of(int value) {
+    public static Money of(long value) {
         if (value < MINIMUM_VALUE) {
             throw new ServiceException(INVALID_MONEY);
         }

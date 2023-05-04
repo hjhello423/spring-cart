@@ -54,7 +54,11 @@ const createProduct = (product) => {
         headers: {'Content-Type': 'application/json'},
         url: '/products',
         method: post_method,
-        data: JSON.stringify(product)
+        data: {
+            name: product.name,
+            image: product.image,
+            price: product.price
+        }
     }).then((response) => {
         window.location.reload();
     }).catch((error) => {
@@ -67,9 +71,13 @@ const updateProduct = (product) => {
     const {id} = product;
 
     axios.request({
-        url: host + `/products/${id}`,
+        url: `/products/${id}`,
         method: put_method,
-        data: JSON.stringify(product)
+        data: {
+            name: product.name,
+            image: product.image,
+            price: product.price
+        }
     }).then((response) => {
         window.location.reload();
     }).catch((error) => {
