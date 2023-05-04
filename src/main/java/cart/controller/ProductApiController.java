@@ -4,6 +4,7 @@ import cart.application.ProductService;
 import cart.controller.dto.ProductRequest;
 import cart.controller.dto.ProductResponse;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -13,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/products")
-public class ProductController {
+public class ProductApiController {
 
     private final ProductService productService;
 
-    public ProductController(ProductService productService) {
+    public ProductApiController(ProductService productService) {
         this.productService = productService;
     }
 
@@ -34,6 +35,13 @@ public class ProductController {
         ProductResponse response = productService.updateProduct(id, request);
 
         return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProduct(@PathVariable long id) {
+        productService.deleteProduct(id);
+
+        return ResponseEntity.noContent().build();
     }
 
 }

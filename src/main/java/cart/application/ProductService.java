@@ -36,12 +36,18 @@ public class ProductService {
         Product product = findProduct(id);
         product.update(request.getName(), request.getImage(), request.getPrice());
         productRepository.update(product);
+
         return ProductResponse.of(product);
     }
 
     private Product findProduct(long id) {
         return productRepository.findById(id)
                 .orElseThrow(() -> new ServiceException(ErrorType.PRODUCT_NOT_FOUND));
+    }
+
+    public void deleteProduct(long id) {
+        Product product = findProduct(id);
+        productRepository.delete(product);
     }
 
 }
