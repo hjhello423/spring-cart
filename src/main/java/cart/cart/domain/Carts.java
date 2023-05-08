@@ -1,6 +1,7 @@
 package cart.cart.domain;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Carts {
 
@@ -12,6 +13,12 @@ public class Carts {
 
     public List<Cart> getValue() {
         return value;
+    }
+
+    public List<Long> getProductIds() {
+        return value.stream()
+                .map(Cart::getProductId)
+                .collect(Collectors.toList());
     }
 
 }

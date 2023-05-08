@@ -1,9 +1,12 @@
 package cart.member.application;
 
 import cart.member.controller.MembersResponse;
+import cart.member.domain.Member;
 import cart.member.domain.MemberRepository;
 import cart.member.domain.Members;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class MemberService {

@@ -31,4 +31,4 @@ INSERT INTO product (name, image, price)
 VALUES ('떡볶이', '/images/tteokbokki.jpg', 5000);
 
 INSERT INTO member (email, password)
-VALUES ('test-user', '1111');
+VALUES ('user', '1111');

@@ -5,16 +5,26 @@ import cart.exception.ServiceException;
 
 public class Cart {
 
+    private static final int MIN_QUANTITY = 1;
+
     private Long id;
     private Long memberId;
     private Long productId;
     private Integer quantity;
 
-    public Cart(Long id, Long memberId, Long productId, Integer quantity) {
+    private Cart(Long id, long memberId, long productId, int quantity) {
         this.id = id;
         this.memberId = memberId;
         this.productId = productId;
         this.quantity = quantity;
+    }
+
+    public static Cart of(long memberId, long productId) {
+        return Cart.builder()
+                .memberId(memberId)
+                .productId(productId)
+                .quantity(MIN_QUANTITY)
+                .build();
     }
 
     private void validate() {
