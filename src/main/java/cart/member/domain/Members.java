@@ -1,6 +1,4 @@
-package cart.application;
-
-import cart.domain.Member;
+package cart.domain.Member;
 
 import java.util.List;
 

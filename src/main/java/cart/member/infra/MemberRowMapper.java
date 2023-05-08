@@ -1,6 +1,6 @@
 package cart.infra.rowmapper;
 
-import cart.domain.Member;
+import cart.domain.Member.Member;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

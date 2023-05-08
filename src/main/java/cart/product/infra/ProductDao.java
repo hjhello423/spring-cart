@@ -1,8 +1,8 @@
 package cart.infra;
 
-import cart.domain.Product;
-import cart.domain.ProductRepository;
-import cart.domain.Products;
+import cart.product.domain.Product;
+import cart.product.domain.ProductRepository;
+import cart.product.domain.Products;
 import cart.infra.rowmapper.ProductRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

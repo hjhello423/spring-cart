@@ -1,6 +1,6 @@
 package cart.controller.dto;
 
-import cart.domain.Product;
+import cart.product.domain.Product;
 
 import java.math.BigDecimal;
 

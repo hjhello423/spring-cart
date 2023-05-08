@@ -1,4 +1,4 @@
-package cart.application;
+package cart.domain.Member;
 
 public interface MemberRepository {
 

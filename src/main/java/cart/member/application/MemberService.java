@@ -1,6 +1,8 @@
 package cart.application;
 
 import cart.controller.dto.MembersResponse;
+import cart.domain.Member.MemberRepository;
+import cart.domain.Member.Members;
 import org.springframework.stereotype.Service;
 
 @Service

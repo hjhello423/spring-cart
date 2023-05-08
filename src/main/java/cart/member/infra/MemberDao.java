@@ -1,8 +1,8 @@
 package cart.infra;
 
-import cart.application.MemberRepository;
-import cart.application.Members;
-import cart.domain.Member;
+import cart.domain.Member.MemberRepository;
+import cart.domain.Member.Members;
+import cart.domain.Member.Member;
 import cart.infra.rowmapper.MemberRowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.stereotype.Repository;

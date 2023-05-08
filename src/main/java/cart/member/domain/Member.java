@@ -1,4 +1,4 @@
-package cart.domain;
+package cart.domain.Member;
 
 public class Member {
 
@@ -9,7 +9,7 @@ public class Member {
     private Member() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
