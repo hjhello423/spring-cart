@@ -1,4 +1,4 @@
-package cart.cart;
+package cart.cart.application;
 
 import cart.cart.domain.CartRepository;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package cart.domain.Member;
+package cart.member.domain;
 
 import java.util.List;
 

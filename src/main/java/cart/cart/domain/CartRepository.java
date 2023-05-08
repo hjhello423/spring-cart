@@ -1,4 +1,4 @@
-package cart.domain.cart;
+package cart.cart.domain;
 
 public interface CartRepository {
 

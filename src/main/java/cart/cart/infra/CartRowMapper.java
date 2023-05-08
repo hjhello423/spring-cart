@@ -1,4 +1,4 @@
-package cart.infra.rowmapper;
+package cart.cart.infra;
 
 import cart.cart.domain.Cart;
 import org.springframework.jdbc.core.RowMapper;

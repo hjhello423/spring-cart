@@ -1,4 +1,4 @@
-package cart.config;
+package cart.auth.config;
 
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 

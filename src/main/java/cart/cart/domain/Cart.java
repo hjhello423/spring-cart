@@ -1,4 +1,4 @@
-package cart.domain.cart;
+package cart.cart.domain;
 
 import cart.exception.ErrorType;
 import cart.exception.ServiceException;

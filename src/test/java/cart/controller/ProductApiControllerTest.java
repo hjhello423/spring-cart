@@ -1,6 +1,6 @@
 package cart.controller;
 
-import cart.controller.dto.ProductResponse;
+import cart.product.controller.dto.ProductResponse;
 import cart.fixture.AssuredTest;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;

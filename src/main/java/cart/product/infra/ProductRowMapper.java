@@ -1,4 +1,4 @@
-package cart.infra.rowmapper;
+package cart.product.infra;
 
 import cart.product.domain.Money;
 import cart.product.domain.Product;

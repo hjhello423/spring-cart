@@ -1,11 +1,11 @@
-package cart.application;
+package cart.product.application;
 
-import cart.controller.dto.ProductRequest;
-import cart.controller.dto.ProductResponse;
-import cart.controller.dto.ProductsResponse;
-import cart.domain.Product;
-import cart.domain.ProductRepository;
-import cart.domain.Products;
+import cart.product.controller.dto.ProductRequest;
+import cart.product.controller.dto.ProductResponse;
+import cart.product.controller.dto.ProductsResponse;
+import cart.product.domain.Product;
+import cart.product.domain.ProductRepository;
+import cart.product.domain.Products;
 import cart.exception.ErrorType;
 import cart.exception.ServiceException;
 import org.springframework.stereotype.Service;

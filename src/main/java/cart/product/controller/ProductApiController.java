@@ -1,9 +1,9 @@
-package cart.controller;
+package cart.product.controller;
 
 import cart.product.application.ProductService;
-import cart.controller.dto.ProductRequest;
-import cart.controller.dto.ProductResponse;
-import cart.controller.dto.ProductsResponse;
+import cart.product.controller.dto.ProductRequest;
+import cart.product.controller.dto.ProductResponse;
+import cart.product.controller.dto.ProductsResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
