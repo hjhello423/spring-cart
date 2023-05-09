@@ -1,4 +1,4 @@
-package cart.controller;
+package cart.product.controller;
 
 import cart.product.controller.dto.ProductResponse;
 import cart.fixture.AssuredTest;
@@ -7,16 +7,16 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static cart.controller.ProductStep.상품_삭제_API_요청;
-import static cart.controller.ProductStep.상품_삭제_응답_검증;
-import static cart.controller.ProductStep.상품_생성_API_요청;
-import static cart.controller.ProductStep.상품_생성_API_요청_응답변환;
-import static cart.controller.ProductStep.상품_생성_실패_응답_검증;
-import static cart.controller.ProductStep.상품_생성_응답_검증;
-import static cart.controller.ProductStep.상품_수정_API_요청;
-import static cart.controller.ProductStep.상품_수정_응답_검증;
-import static cart.controller.ProductStep.상품_전체_조회_API_요청;
-import static cart.controller.ProductStep.상품_전체_조회_응답_검증;
+import static cart.product.controller.ProductStep.상품_삭제_API_요청;
+import static cart.product.controller.ProductStep.상품_삭제_응답_검증;
+import static cart.product.controller.ProductStep.상품_생성_API_요청;
+import static cart.product.controller.ProductStep.상품_생성_API_요청_응답변환;
+import static cart.product.controller.ProductStep.상품_생성_실패_응답_검증;
+import static cart.product.controller.ProductStep.상품_생성_응답_검증;
+import static cart.product.controller.ProductStep.상품_수정_API_요청;
+import static cart.product.controller.ProductStep.상품_수정_응답_검증;
+import static cart.product.controller.ProductStep.상품_전체_조회_API_요청;
+import static cart.product.controller.ProductStep.상품_전체_조회_응답_검증;
 
 class ProductApiControllerTest extends AssuredTest {
 

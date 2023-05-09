@@ -1,4 +1,4 @@
-package cart.controller;
+package cart;
 
 import cart.member.application.MemberService;
 import cart.product.application.ProductService;

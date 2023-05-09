@@ -1,8 +1,8 @@
-package cart.controller;
+package cart.product.controller;
 
 import cart.product.controller.dto.ProductResponse;
 import cart.product.controller.dto.ProductsResponse;
-import cart.controller.handler.dto.ErrorResponse;
+import cart.exception.handler.dto.ErrorResponse;
 import cart.exception.ErrorType;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
