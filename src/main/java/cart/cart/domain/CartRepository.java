@@ -8,4 +8,5 @@ public interface CartRepository {
 
     void addProduct(Cart cart);
 
+    void deleteCart(Cart cart);
 }

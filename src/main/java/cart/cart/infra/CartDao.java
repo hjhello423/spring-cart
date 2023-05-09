@@ -40,8 +40,8 @@ public class CartDao extends NamedParameterJdbcDaoSupport implements CartReposit
 
     @Override
     public Carts findByMemberId(long memberId) {
-        final String query = String.format("SELECT * FROM %s WHERE member_id = :member_id", TABLE_NAME);
-        SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("member_id", memberId);
+        final String query = String.format("SELECT * FROM %s WHERE member_id = :memberId", TABLE_NAME);
+        SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("memberId", memberId);
         List<Cart> carts = getNamedParameterJdbcTemplate().query(query, namedParameters, ROW_MAPPER);
 
         return new Carts(carts);
@@ -51,6 +51,15 @@ public class CartDao extends NamedParameterJdbcDaoSupport implements CartReposit
     public void addProduct(Cart cart) {
         BeanPropertySqlParameterSource parameterSource = new BeanPropertySqlParameterSource(cart);
         simpleJdbcInsert.executeAndReturnKey(parameterSource);
+    }
+
+    @Override
+    public void deleteCart(Cart cart) {
+        final String query = String.format("DELETE FROM %s WHERE member_id = :memberId AND product_id = :productId",
+                TABLE_NAME);
+        SqlParameterSource namedParameters = new BeanPropertySqlParameterSource(cart);
+
+        getNamedParameterJdbcTemplate().update(query, namedParameters);
     }
 
 }

@@ -40,4 +40,8 @@ public class CartService {
         cartRepository.addProduct(cart);
     }
 
+    public void deleteCartProduct(Auth auth, Long productId) {
+        Cart cart = Cart.of(auth.getId(), productId);
+        cartRepository.deleteCart(cart);
+    }
 }
