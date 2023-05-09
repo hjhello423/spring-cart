@@ -31,10 +31,10 @@ public class ProductApiController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<ProductResponse> updateProduct(@PathVariable long id,
+    @PutMapping("/{productId}")
+    public ResponseEntity<ProductResponse> updateProduct(@PathVariable long productId,
                                                          @RequestBody ProductRequest request) {
-        ProductResponse response = productService.updateProduct(id, request);
+        ProductResponse response = productService.updateProduct(productId, request);
 
         return ResponseEntity.ok(response);
     }
