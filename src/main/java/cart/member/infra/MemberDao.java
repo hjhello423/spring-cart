@@ -1,11 +1,13 @@
 package cart.member.infra;
 
+import cart.member.domain.Member;
 import cart.member.domain.MemberRepository;
 import cart.member.domain.Members;
-import cart.member.domain.Member;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
@@ -16,11 +18,17 @@ import java.util.Optional;
 public class MemberDao extends NamedParameterJdbcDaoSupport implements MemberRepository {
 
     private static final String TABLE_NAME = "member";
+    private static final String ID = "id";
+    private static final String[] COLUMNS = {"email", "password"};
     private static final MemberRowMapper ROW_MAPPER = new MemberRowMapper();
-
+    private final SimpleJdbcInsert simpleJdbcInsert;
 
     public MemberDao(DataSource dataSource) {
         setDataSource(dataSource);
+        this.simpleJdbcInsert = new SimpleJdbcInsert(dataSource)
+                .withTableName(TABLE_NAME)
+                .usingGeneratedKeyColumns(ID)
+                .usingColumns(COLUMNS);
     }
 
     @Override
@@ -42,4 +50,9 @@ public class MemberDao extends NamedParameterJdbcDaoSupport implements MemberRep
         return Optional.ofNullable(member);
     }
 
+    @Override
+    public void save(Member member) {
+        BeanPropertySqlParameterSource parameterSource = new BeanPropertySqlParameterSource(member);
+         simpleJdbcInsert.executeAndReturnKey(parameterSource);
+    }
 }

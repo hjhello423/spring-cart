@@ -14,7 +14,6 @@ public class CartRowMapper implements RowMapper<Cart> {
                 .id(rs.getLong("id"))
                 .memberId(rs.getLong("member_id"))
                 .productId(rs.getLong("product_id"))
-                .quantity(rs.getInt("quantity"))
                 .build();
     }
 

@@ -18,7 +18,7 @@ public class CartDao extends NamedParameterJdbcDaoSupport implements CartReposit
 
     private static final String TABLE_NAME = "cart";
     private static final String ID = "id";
-    private static final String[] COLUMNS = {"member_id", "product_id", "quantity"};
+    private static final String[] COLUMNS = {"member_id", "product_id"};
     private static final CartRowMapper ROW_MAPPER = new CartRowMapper();
     private final SimpleJdbcInsert simpleJdbcInsert;
 

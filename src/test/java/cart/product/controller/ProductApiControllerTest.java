@@ -1,7 +1,7 @@
 package cart.product.controller;
 
-import cart.product.controller.dto.ProductResponse;
 import cart.fixture.AssuredTest;
+import cart.product.controller.dto.ProductResponse;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
@@ -86,7 +86,6 @@ class ProductApiControllerTest extends AssuredTest {
     void findProduct() {
         // given
         ProductResponse productResponse = 상품_생성_API_요청_응답변환(NAME, IMAGE, PRICE);
-        long productId = productResponse.getId();
 
         // when
         ExtractableResponse<Response> extractableResponse = 상품_전체_조회_API_요청();

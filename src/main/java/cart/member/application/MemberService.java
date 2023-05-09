@@ -1,12 +1,12 @@
 package cart.member.application;
 
-import cart.member.controller.MembersResponse;
-import cart.member.domain.Member;
+import cart.member.controller.dto.MemberRequest;
+import cart.member.controller.dto.MembersResponse;
 import cart.member.domain.MemberRepository;
 import cart.member.domain.Members;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class MemberService {
@@ -21,6 +21,10 @@ public class MemberService {
         Members members = memberRepository.findAll();
 
         return MembersResponse.of(members);
+    }
+
+    public void createMember(MemberRequest request) {
+        memberRepository.save(request.toMember());
     }
 
 }

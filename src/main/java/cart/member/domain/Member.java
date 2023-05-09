@@ -9,6 +9,13 @@ public class Member {
     private Member() {
     }
 
+    public static Member of(String email, String password) {
+        return Member.builder()
+                .email(email)
+                .password(password)
+                .build();
+    }
+
     public Long getId() {
         return id;
     }
