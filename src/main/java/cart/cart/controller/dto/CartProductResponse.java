@@ -12,6 +12,9 @@ public class CartProductResponse {
     private String imageUrl;
     private BigDecimal price;
 
+    private CartProductResponse() {
+    }
+
     private CartProductResponse(Integer id, String productName, String imageUrl, BigDecimal price) {
         this.id = id;
         this.productName = productName;
